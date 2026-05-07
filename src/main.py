@@ -1,161 +1,85 @@
-import tkinter as tk
-import sqlite3
+import customtkinter as ctk
+from PIL import Image
+from ui.menu import abrir_menu
+
+# tema da janela
+ctk.set_appearance_mode("dark")
+ctk.set_default_color_theme("dark-blue")
+
+# Janela principal
+app = ctk.CTk()
+
+app.title("ModFlow")
+app.geometry("1200x800")
+app.resizable(True, True)
 
 
-# uma lista para as tarefas
-tarefas = []
+# cores utilizadas
 
-# usando banco de dados
-conn = sqlite3.connect("modflow.db")
-cursor = conn.cursor()
+BG_COLOR = "#121212"
+PURPLE = "#c77dff"
 
+app.configure(fg_color=BG_COLOR)
 
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS tarefas (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    tarefa TEXT,
-    prioridade TEXT,
-    status TEXT
-)
-""")
+# frame principal 
 
-conn.commit()
-
-# fun adicionar tarefa
-def adicionar_tarefa():
-    tarefa = entrada.get()
-    if tarefa != "":
-        prioridade = prioridade_var.get()
-        status = status_var.get()
-
-        cursor.execute(
-            "INSERT INTO tarefas (tarefa, prioridade, status) VALUES (?, ?, ?)",
-            (tarefa, prioridade, status)
-        )
-
-        conn.commit()
-
-        atualizar_lista()
-        entrada.delete(0, tk.END)
-        atualizar_lista()
-        entrada.delete(0, tk.END)
-
-# atualizar a lista de tarefas
-def atualizar_lista():
-    lista.delete(0, tk.END)
-
-    cursor.execute("SELECT tarefa, prioridade, status FROM tarefas")
-    resultados = cursor.fetchall()
-
-    for tarefa, prioridade, status in resultados:
-        lista.insert(
-            tk.END,
-            f"[{prioridade}] [{status}] {tarefa}"
-        )
-
-# fun remover uma tarefa
-def remover_tarefa():
-    selecionada = lista.curselection()
-
-    if selecionada:
-        item = lista.get(selecionada)
-
-        tarefa_texto = item.split("] ")[-1]
-
-        cursor.execute(
-            "DELETE FROM tarefas WHERE tarefa = ?",
-            (tarefa_texto,)
-        )
-
-        conn.commit()
-
-        atualizar_lista()
-
-# fun editar uma tarefa
-def editar_tarefa():
-    selecionada = lista.curselection()
-
-    if selecionada:
-        item = lista.get(selecionada)
-
-        tarefa_antiga = item.split("] ")[-1]
-
-        nova_tarefa = entrada.get()
-
-        prioridade = prioridade_var.get()
-        status = status_var.get()
-
-        cursor.execute("""
-            UPDATE tarefas
-            SET tarefa = ?, prioridade = ?, status = ?
-            WHERE tarefa = ?
-        """, (
-            nova_tarefa,
-            prioridade,
-            status,
-            tarefa_antiga
-        ))
-
-        conn.commit()
-
-        atualizar_lista()
-
-        entrada.delete(0, tk.END)
-
-
-janela = tk.Tk()
-janela.title("ModFlow - Gerenciador de Tarefas")
-
-
-entrada = tk.Entry(janela, width=40)
-entrada.pack(pady=10)
-
-# botao de prioridade
-prioridade_var = tk.StringVar()
-prioridade_var.set("Média")
-
-menu_prioridade = tk.OptionMenu(
-    janela,
-    prioridade_var,
-    "Alta",
-    "Média",
-    "Baixa"
+frame = ctk.CTkFrame(
+    app,
+    fg_color="transparent"
 )
 
-menu_prioridade.pack(pady=5)
+frame.pack(expand=True)
 
-# botao de status
-status_var = tk.StringVar()
-status_var.set("Pendente")
-
-menu_status = tk.OptionMenu(
-    janela,
-    status_var,
-    "Pendente",
-    "Em andamento",
-    "Concluída"
+# icone do nosso servidor
+imagem = ctk.CTkImage(
+    light_image=Image.open("assets/server_icon.png"),
+    dark_image=Image.open("assets/server_icon.png"),
+    size=(150, 150)
 )
 
-menu_status.pack(pady=5)
+logo = ctk.CTkLabel(
+    frame,
+    image=imagem,
+    text=""
+)
 
-# botao adicionar
-botao = tk.Button(janela, text="Adicionar Tarefa", command=adicionar_tarefa)
-botao.pack()
+logo.pack(pady=(20, 10))
 
-# botao remover
-botao_remover = tk.Button(janela, text="Remover Tarefa", command=remover_tarefa)
-botao_remover.pack()
+# titulo do aplicativo
 
-# botao editar
-botao_editar = tk.Button(janela, text="Editar Tarefa", command=editar_tarefa)
-botao_editar.pack()
+titulo = ctk.CTkLabel(
+    frame,
+    text="ModFlow",
+    font=("Segoe UI", 40, "bold"),
+    text_color="white"
+)
 
-# lista das tarefas ja adicionadas
-lista = tk.Listbox(janela, width=50)
-lista.pack(pady=10)
+titulo.pack(pady=(10, 5))
 
-# Atualiza lista antes de iniciar
-atualizar_lista()
+# descrevendo o app
+descricao = ctk.CTkLabel(
+    frame,
+    text="Painel de gerenciamento de tarefas para moderadores do Discord",
+    font=("Segoe UI", 16),
+    text_color="#aaaaaa"
+)
 
-# Rodar sistema
-janela.mainloop()
+descricao.pack(pady=(0, 30))
+
+# botao para comecar
+botao_comecar = ctk.CTkButton(
+    frame,
+    text="Começar",
+    width=220,
+    height=50,
+    corner_radius=15,
+    fg_color=PURPLE,
+    hover_color="#acd855f7",
+    font=("Segoe UI", 18, "bold"),
+    command=lambda: abrir_menu(app)
+)
+
+botao_comecar.pack()
+
+# Rodar app
+app.mainloop()
