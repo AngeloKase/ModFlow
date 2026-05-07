@@ -8,7 +8,9 @@ def adicionar_tarefa():
     tarefa = entrada.get()
     if tarefa != "":
         prioridade = prioridade_var.get()
-        tarefas.append(f"[{prioridade}] {tarefa}")
+        status = status_var.get()
+
+        tarefas.append(f"[{prioridade}] [{status}] {tarefa}")
         atualizar_lista()
         entrada.delete(0, tk.END)
 
@@ -38,7 +40,9 @@ def editar_tarefa():
 
         if nova_tarefa != "":
             prioridade = prioridade_var.get()
-            tarefas[indice] = f"[{prioridade}] {nova_tarefa}"
+            status = status_var.get()
+
+            tarefas[indice] = f"[{prioridade}] [{status}] {nova_tarefa}"
             atualizar_lista()
             entrada.delete(0, tk.END)
 
@@ -61,6 +65,22 @@ menu_prioridade = tk.OptionMenu(
     "Média",
     "Baixa"
 )
+
+menu_prioridade.pack(pady=5)
+
+# Campo de status
+status_var = tk.StringVar()
+status_var.set("Pendente")
+
+menu_status = tk.OptionMenu(
+    janela,
+    status_var,
+    "Pendente",
+    "Em andamento",
+    "Concluída"
+)
+
+menu_status.pack(pady=5)
 
 # botao do adicionar
 botao = tk.Button(janela, text="Adicionar Tarefa", command=adicionar_tarefa)
