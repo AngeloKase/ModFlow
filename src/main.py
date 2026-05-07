@@ -1,9 +1,9 @@
 import tkinter as tk
 
-# Lista de tarefas
+# uma lista para as tarefas
 tarefas = []
 
-# Função para adicionar tarefa
+# fun de adicionar a tarefa
 def adicionar_tarefa():
     tarefa = entrada.get()
     if tarefa != "":
@@ -11,27 +11,40 @@ def adicionar_tarefa():
         atualizar_lista()
         entrada.delete(0, tk.END)
 
-# Atualiza a lista na tela
+# fun para a lista ficar atualizada
 def atualizar_lista():
     lista.delete(0, tk.END)
     for t in tarefas:
         lista.insert(tk.END, t)
 
-# Janela principal
+# fun para remover a tarefa selecionada
+def remover_tarefa():
+    selecionada = lista.curselection()
+
+    if selecionada:
+        indice = selecionada[0]
+        tarefas.pop(indice)
+        atualizar_lista()
+
+
 janela = tk.Tk()
 janela.title("ModFlow - Gerenciador de Tarefas")
 
-# Campo de entrada
+
 entrada = tk.Entry(janela, width=40)
 entrada.pack(pady=10)
 
-# Botão adicionar
+# botao do adicionar
 botao = tk.Button(janela, text="Adicionar Tarefa", command=adicionar_tarefa)
 botao.pack()
 
-# Lista de tarefas
+# botao do remover
+botao_remover = tk.Button(janela, text="Remover Tarefa", command=remover_tarefa)
+botao_remover.pack()
+
+# lista de tarefas
 lista = tk.Listbox(janela, width=50)
 lista.pack(pady=10)
 
-# Rodar sistema
+# janela tkinter
 janela.mainloop()
