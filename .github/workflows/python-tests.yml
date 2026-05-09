@@ -29,6 +29,6 @@ jobs:
         pip install customtkinter
 
     - name: Rodar testes
-    run: |
-      cd src
-      python -m unittest test_validacao
+      run: |
+        cd src
+        python -m unittest test_validacao
