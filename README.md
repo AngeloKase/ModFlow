@@ -15,3 +15,11 @@ Sistema de gerenciamento de tarefas para moderadores do Discord.
 
 ## Objetivo
 Organizar tarefas de moderação como denúncias, tickets e eventos.
+
+
+
+pra lembrar depois todos os install
+
+pip install pyinstaller
+pip install customtkinter
+pip install pillow
