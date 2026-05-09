@@ -1,7 +1,12 @@
 import customtkinter as ctk
 from database import adicionar_tarefa
 
+TEXT_COLOR = ("#111111", "#ffffff")
+SECOND_TEXT = ("#555555", "#aaaaaa")
+
 PURPLE = "#c77dff"
+PURPLE_HOVER = "#a855f7"
+GREEN = "#4ade80"
 
 # fun para voltar para o menu
 
@@ -44,8 +49,8 @@ def abrir_add_task(app):
         text="← Voltar",
         width=120,
         height=40,
-        fg_color="#2a2a2a",
-        hover_color="#3a3a3a",
+        fg_color= PURPLE,
+        hover_color= PURPLE_HOVER,
         command=lambda: voltar_menu(app)
     )
 
@@ -56,7 +61,7 @@ def abrir_add_task(app):
         frame,
         text="Adicionar Tarefa",
         font=("Segoe UI", 32, "bold"),
-        text_color="white"
+        text_color=TEXT_COLOR
     )
 
     titulo.pack(pady=(20, 30))
@@ -75,10 +80,27 @@ def abrir_add_task(app):
     descricao_entry = ctk.CTkTextbox(
         frame,
         height=100,
-        font=("Segoe UI", 14)
+        font=("Segoe UI", 14),
     )
 
     descricao_entry.pack(fill="x", pady=10)
+
+    placeholder = "Descrição da tarefa..."
+
+    descricao_entry.insert("1.0", placeholder)
+
+    def remover_placeholder(event):
+        if descricao_entry.get("1.0", "end-1c") == placeholder:
+            descricao_entry.delete("1.0", "end")
+            descricao_entry.configure(text_color=SECOND_TEXT)
+
+    def adicionar_placeholder(event):
+        if descricao_entry.get("1.0", "end-1c").strip() == "":
+            descricao_entry.insert("1.0", placeholder)
+            descricao_entry.configure(text_color=SECOND_TEXT)
+
+    descricao_entry.bind("<FocusIn>", remover_placeholder)
+    descricao_entry.bind("<FocusOut>", adicionar_placeholder)
 
     # prioridade da tarefa
     prioridade_label = ctk.CTkLabel(
@@ -137,7 +159,7 @@ def abrir_add_task(app):
 
     porcentagem_label = ctk.CTkLabel(
         porcentagem_frame,
-        text="0%",
+        text="50%",
         font=("Segoe UI", 22, "bold"),
         text_color=PURPLE
     )
@@ -171,10 +193,7 @@ def abrir_add_task(app):
 
         nome = nome_entry.get()
 
-        descricao = descricao_entry.get(
-            "1.0",
-            "end"
-        )
+        descricao = descricao_entry.get("1.0", "end")
 
         adicionar_tarefa(
             nome,
@@ -200,7 +219,7 @@ def abrir_add_task(app):
             sucesso_frame,
             text="Tarefa salva com sucesso!",
             font=("Segoe UI", 34, "bold"),
-            text_color="#4ade80"
+            text_color= GREEN
         )
 
         titulo_sucesso.pack(
@@ -211,7 +230,7 @@ def abrir_add_task(app):
             sucesso_frame,
             text=f'"{nome}" foi adicionada ao sistema.',
             font=("Segoe UI", 18),
-            text_color="white"
+            text_color=TEXT_COLOR
         )
 
         subtitulo.pack(
@@ -224,7 +243,7 @@ def abrir_add_task(app):
             width=250,
             height=55,
             fg_color=PURPLE,
-            hover_color="#a855f7",
+            hover_color= PURPLE_HOVER,
             font=("Segoe UI", 17, "bold"),
             command=lambda: voltar_menu(app)
         )
@@ -237,7 +256,7 @@ def abrir_add_task(app):
         text="Salvar Tarefa",
         height=55,
         fg_color=PURPLE,
-        hover_color="#a855f7",
+        hover_color= PURPLE_HOVER,
         font=("Segoe UI", 17, "bold"),
         command=salvar
     )
