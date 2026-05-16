@@ -1,7 +1,3 @@
-# =========================================
-# ARQUIVO: ui/remove_task.py
-# =========================================
-
 import customtkinter as ctk
 import textwrap
 
@@ -15,9 +11,6 @@ PURPLE = "#c77dff"
 PURPLE_HOVER = "#a855f7"
 GREEN = "#4ade80"
 
-# =========================================
-# VOLTAR MENU
-# =========================================
 
 def voltar_menu(app):
 
@@ -26,17 +19,13 @@ def voltar_menu(app):
     abrir_menu(app)
 
 
-# =========================================
-# ABRIR REMOVER
-# =========================================
-
+# Abri fun de remover Tarefa do banco
 def abrir_remover_task(app):
 
     # limpar tela
     for widget in app.winfo_children():
         widget.destroy()
 
-    # frame principal
     frame = ctk.CTkScrollableFrame(
         app,
         fg_color="transparent"
@@ -49,7 +38,7 @@ def abrir_remover_task(app):
         pady=20
     )
 
-    # botão voltar
+ 
     voltar_btn = ctk.CTkButton(
         frame,
         text="← Voltar",
@@ -66,7 +55,7 @@ def abrir_remover_task(app):
         pady=(0, 20)
     )
 
-    # titulo
+
     titulo = ctk.CTkLabel(
         frame,
         text="Remover Tarefas",
@@ -144,18 +133,7 @@ Progresso: {tarefa[5]}%
         )
 
 
-# =========================================
-# CONFIRMAR REMOÇÃO
-# =========================================
-
-# =========================================
-# CONFIRMAR REMOÇÃO
-# =========================================
-
-# =========================================
-# CONFIRMAR REMOÇÃO
-# =========================================
-
+# Fun de confirmar remoção após 5 segundos
 def confirmar_remocao(app, tarefa):
 
     # limpar tela
@@ -253,9 +231,7 @@ Tem certeza que deseja remover:
         padx=10
     )
 
-    # =========================================
-    # CONTAGEM
-    # =========================================
+    # Contagem da remoção
 
     tempo = 5
 
@@ -290,9 +266,7 @@ Tem certeza que deseja remover:
     atualizar_contagem()
 
 
-# =========================================
-# REMOVER TAREFA
-# =========================================
+# Tela mostrando a confirmação de remoção
 
 def remover(app, tarefa):
 
