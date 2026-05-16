@@ -1,7 +1,3 @@
-# =========================================
-# ARQUIVO: ui/edit_task.py
-# =========================================
-
 import customtkinter as ctk
 import textwrap
 
@@ -10,13 +6,13 @@ from database import (
     editar_tarefa
 )
 
+# Cores
+
 PURPLE = "#c77dff"
 PURPLE_HOVER = "#a855f7"
 GREEN = "#4ade80"
 
-# =========================================
-# VOLTAR MENU
-# =========================================
+# Fun para voltar para o menu
 
 def voltar_menu(app):
 
@@ -25,9 +21,7 @@ def voltar_menu(app):
     abrir_menu(app)
 
 
-# =========================================
-# ABRIR EDITAR
-# =========================================
+# Fun abrir tela de editar tarefa
 
 def abrir_editar_task(app):
 
@@ -139,10 +133,7 @@ def abrir_editar_task(app):
         )
 
 
-# =========================================
-# ESCOLHER O QUE EDITAR
-# =========================================
-
+# Fun para escolher oque da tarefa o usuario quer editar
 def abrir_opcoes_edicao(app, tarefa):
 
     # limpar tela
@@ -220,10 +211,7 @@ def abrir_opcoes_edicao(app, tarefa):
         btn.pack(pady=10)
 
 
-# =========================================
-# TELA BASE
-# =========================================
-
+# Tela base do código
 def tela_base(app, titulo_texto):
 
     for widget in app.winfo_children():
@@ -272,9 +260,7 @@ def tela_base(app, titulo_texto):
 
 
 
-# =========================================
-# EDITAR TUDO
-# =========================================
+# opção editar tudo
 
 def editar_tudo(app, tarefa):
 
@@ -378,10 +364,7 @@ def editar_tudo(app, tarefa):
     btn.pack(pady=20)
 
 
-# =========================================
-# EDITAR NOME
-# =========================================
-
+# opção editar somente o nome
 def editar_nome(app, tarefa):
 
     frame = tela_base(
@@ -426,10 +409,7 @@ def editar_nome(app, tarefa):
     btn.pack(pady=20)
 
 
-# =========================================
-# EDITAR DESCRIÇÃO
-# =========================================
-
+# opção editar somente a descrição
 def editar_descricao(app, tarefa):
 
     frame = tela_base(
@@ -477,9 +457,7 @@ def editar_descricao(app, tarefa):
     btn.pack(pady=20)
 
 
-# =========================================
-# EDITAR PRIORIDADE
-# =========================================
+# opção editar somente a prioridade
 
 def editar_prioridade(app, tarefa):
 
@@ -528,9 +506,7 @@ def editar_prioridade(app, tarefa):
     btn.pack(pady=20)
 
 
-# =========================================
-# EDITAR STATUS
-# =========================================
+# opção editar status
 
 def editar_status(app, tarefa):
 
@@ -579,9 +555,7 @@ def editar_status(app, tarefa):
     btn.pack(pady=20)
 
 
-# =========================================
-# EDITAR PROGRESSO
-# =========================================
+# opção editar progresso
 
 def editar_progresso(app, tarefa):
 
