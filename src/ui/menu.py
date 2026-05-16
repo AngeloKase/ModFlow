@@ -7,16 +7,14 @@ from ui.remove_task import abrir_remover_task
 
 PURPLE = "#c77dff"
 
-
+# abri o menu
 def abrir_menu(app):
 
     # limpa a tela atual
     for widget in app.winfo_children():
         widget.destroy()
 
-    # =========================================
-    # FRAME CENTRAL
-    # =========================================
+    # usamos o mesmo visual que a janela de inicio
 
     frame = ctk.CTkFrame(
         app,
@@ -36,9 +34,7 @@ def abrir_menu(app):
 
     frame.pack_propagate(False)
 
-    # =========================================
-    # BOTÃO TEMA
-    # =========================================
+    # Fun do Tema
 
     def trocar_tema():
 
@@ -78,9 +74,6 @@ def abrir_menu(app):
         anchor="center"
     )
 
-    # =========================================
-    # TITULO
-    # =========================================
 
     titulo = ctk.CTkLabel(
         frame,
@@ -93,10 +86,6 @@ def abrir_menu(app):
         pady=(70, 15)
     )
 
-    # =========================================
-    # DESCRIÇÃO
-    # =========================================
-
     descricao = ctk.CTkLabel(
         frame,
         text="Gerencie tarefas da moderação de forma rápida e organizada",
@@ -108,9 +97,7 @@ def abrir_menu(app):
         pady=(0, 40)
     )
 
-    # =========================================
-    # BOTÕES
-    # =========================================
+    # botões para cada área diferente
 
     botoes = [
 
@@ -144,10 +131,6 @@ def abrir_menu(app):
         botao.pack(
             pady=12
         )
-
-    # =========================================
-    # FOOTER
-    # =========================================
 
     footer = ctk.CTkLabel(
         frame,
