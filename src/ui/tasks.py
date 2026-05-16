@@ -14,9 +14,7 @@ def voltar_menu(app):
     abrir_menu(app)
 
 
-# =========================================
-# DETALHES DA TAREFA
-# =========================================
+# fun ver mais da tarefa
 def abrir_detalhes_tarefa(
     app,
     id_tarefa,
@@ -210,9 +208,7 @@ def abrir_ver_tarefas(app):
 
         card.pack(fill="x", pady=10)
 
-        # =========================================
-        # HEADER
-        # =========================================
+        # cabeçalho
 
         header = ctk.CTkFrame(
             card,
@@ -225,7 +221,7 @@ def abrir_ver_tarefas(app):
             pady=(15, 5)
         )
 
-        # título
+        
         titulo = ctk.CTkLabel(
             header,
             text=f"{nome}",
