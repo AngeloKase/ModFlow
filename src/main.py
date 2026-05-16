@@ -2,9 +2,7 @@ import customtkinter as ctk
 from PIL import Image
 from ui.menu import abrir_menu
 
-# =========================
-# CONFIGURAÇÕES INICIAIS
-# =========================
+# Configurando o tema da janela
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
@@ -12,9 +10,9 @@ ctk.set_default_color_theme("dark-blue")
 
 
 
-# =========================
-# CORES
-# =========================
+
+# Cores
+
 
 BG_COLOR = ("#f5f5f5", "#111111")
 CARD_COLOR = ("#ffffff", "#181818")
@@ -24,9 +22,8 @@ SECOND_TEXT = ("#555555", "#aaaaaa")
 PURPLE = "#c77dff"
 PURPLE_HOVER = "#a855f7"
 
-# =========================
-# JANELA PRINCIPAL
-# =========================
+# Janela principal
+
 
 app = ctk.CTk()
 
@@ -41,12 +38,11 @@ app.configure(
 )
 
 
-# =========================================
-# FUNÇÕES FULLSCREEN
-# =========================================
+# Colocando para o programa abrir em tela cheia
 
 fullscreen = True
 
+# Fazendo dois metodos para poder entrar e sair da tela cheia
 
 def sair_fullscreen(event=None):
 
@@ -72,17 +68,17 @@ def entrar_fullscreen(event=None):
     )
 
 
-# =========================================
-# BINDS
-# =========================================
+# Colocando os comandos para a função
 
 # ESC sai da tela cheia
+
 app.bind(
     "<Escape>",
     sair_fullscreen
 )
 
 # F11 entra em tela cheia
+
 app.bind(
     "<F11>",
     entrar_fullscreen
@@ -90,13 +86,12 @@ app.bind(
 
 
 
-# =========================
-# FUNÇÕES
-# =========================
+# colocando o tema base do código escuro
 
 modo_atual = "dark"
 
-
+# Função para trocar o tema
+ 
 def trocar_tema():
 
     global modo_atual
@@ -131,14 +126,13 @@ def sair_fullscreen(event):
 
 
 # ESC para sair do fullscreen
+
 app.bind(
     "<Escape>",
     sair_fullscreen
 )
 
-# =========================
-# FRAME CENTRAL
-# =========================
+# Frame central
 
 frame = ctk.CTkFrame(
     app,
@@ -157,11 +151,10 @@ frame.place(
 )
 
 # impedir resize automático
+
 frame.pack_propagate(False)
 
-# =========================
-# BOTÃO TEMA
-# =========================
+# botão para mudar o tema
 
 tema_btn = ctk.CTkButton(
     frame,
@@ -181,9 +174,7 @@ tema_btn.place(
     anchor="center"
 )
 
-# =========================
-# LOGO
-# =========================
+# Colocando a logo
 
 imagem = ctk.CTkImage(
     light_image=Image.open(
@@ -205,9 +196,6 @@ logo.pack(
     pady=(40, 20)
 )
 
-# =========================
-# TÍTULO
-# =========================
 
 titulo = ctk.CTkLabel(
     frame,
@@ -217,10 +205,6 @@ titulo = ctk.CTkLabel(
 )
 
 titulo.pack()
-
-# =========================
-# DESCRIÇÃO
-# =========================
 
 descricao = ctk.CTkLabel(
     frame,
@@ -232,10 +216,6 @@ descricao = ctk.CTkLabel(
 descricao.pack(
     pady=(10, 40)
 )
-
-# =========================
-# BOTÃO COMEÇAR
-# =========================
 
 botao_comecar = ctk.CTkButton(
     frame,
@@ -252,9 +232,6 @@ botao_comecar = ctk.CTkButton(
 
 botao_comecar.pack()
 
-# =========================
-# FOOTER
-# =========================
 
 footer = ctk.CTkLabel(
     frame,
@@ -267,9 +244,4 @@ footer.pack(
     side="bottom",
     pady=20
 )
-
-# =========================
-# LOOP
-# =========================
-
 app.mainloop()
