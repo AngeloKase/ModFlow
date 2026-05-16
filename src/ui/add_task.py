@@ -85,6 +85,7 @@ def abrir_add_task(app):
 
     descricao_entry.pack(fill="x", pady=10)
 
+    # exemplo de preenchimento para indicar oque se deve escrever
     placeholder = "Descrição da tarefa..."
 
     descricao_entry.insert("1.0", placeholder)
