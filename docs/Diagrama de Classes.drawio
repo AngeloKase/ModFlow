@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="n0MM6MagMSJ64f_0ndUp">
+    <mxGraphModel dx="934" dy="569" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-8" parent="1" style="text;strokeColor=none;fillColor=none;html=1;fontSize=27;fontStyle=1;verticalAlign=middle;align=center;autosizeText=1;" value="ModFlow" vertex="1">
+          <mxGeometry height="40" width="160" x="334" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="Diagrama de Classes" vertex="1">
+          <mxGeometry height="30" width="140" x="344" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-13" edge="1" parent="1" source="m2yvUSB8P8uvTwHyw_xU-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jumpStyle=none;endArrow=classic;endFill=1;dashed=1;" target="m2yvUSB8P8uvTwHyw_xU-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Menu UI" vertex="1">
+          <mxGeometry height="60" width="120" x="430" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Tarefas" vertex="1">
+          <mxGeometry height="60" width="120" x="686" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Tarefas" vertex="1">
+          <mxGeometry height="60" width="120" x="276" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-16" edge="1" parent="1" source="m2yvUSB8P8uvTwHyw_xU-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;" target="m2yvUSB8P8uvTwHyw_xU-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Banco de Dados" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="210" width="110" x="60" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Tarefas" vertex="1">
+          <mxGeometry height="50" width="110" x="60" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="• id: int&amp;nbsp;&lt;br&gt;&lt;div&gt;• nome: string&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;•&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt; &lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;descrição&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: string&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;• prioridade: string&lt;/div&gt;&lt;div&gt;• status: string&amp;nbsp;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;•&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;porcentagem: int&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="60" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="90" width="110" x="60" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="• adicionar()&amp;nbsp;&lt;br&gt;• editar()&amp;nbsp;&lt;br&gt;• remover()&amp;nbsp;&lt;br&gt;• listar()" vertex="1">
+          <mxGeometry height="70" width="90" x="60" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-23" edge="1" parent="1" source="m2yvUSB8P8uvTwHyw_xU-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jumpStyle=none;endArrow=classic;endFill=1;dashed=1;" target="m2yvUSB8P8uvTwHyw_xU-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Editar Tarefa UI" vertex="1">
+          <mxGeometry height="60" width="120" x="430" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Tarefas" vertex="1">
+          <mxGeometry height="60" width="120" x="686" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="170" x="226" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Banco de Dados" vertex="1">
+          <mxGeometry height="50" width="170" x="226" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="• adicionar_tarefa()&amp;nbsp;&lt;br&gt;• listar_tarefas(): list&amp;nbsp;&lt;br&gt;• remover_tarefa(): void&amp;nbsp;&lt;br&gt;• editar_tarefa(): void" vertex="1">
+          <mxGeometry height="95" width="170" x="226" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="m2yvUSB8P8uvTwHyw_xU-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&lt;span style=&quot;&quot;&gt;• conn: sqlite3.Connection&amp;nbsp;&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;•&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt; cursor: sqlite3.Cursor&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="170" x="226" y="205" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
