@@ -8,6 +8,9 @@ from database import (
 
 # Cores
 
+TEXT_COLOR = ("#111111", "#ffffff")
+SECOND_TEXT = ("#555555", "#aaaaaa")
+
 PURPLE = "#c77dff"
 PURPLE_HOVER = "#a855f7"
 GREEN = "#4ade80"
@@ -19,6 +22,54 @@ def voltar_menu(app):
     from ui.menu import abrir_menu
 
     abrir_menu(app)
+
+
+def tela_sucesso_edicao(app, nome):
+
+    for widget in app.winfo_children():
+        widget.destroy()
+
+    sucesso_frame = ctk.CTkFrame(
+        app,
+        fg_color="transparent"
+    )
+
+    sucesso_frame.pack(expand=True)
+
+    titulo_sucesso = ctk.CTkLabel(
+        sucesso_frame,
+        text="Tarefa editada com sucesso!",
+        font=("Segoe UI", 34, "bold"),
+        text_color=GREEN
+    )
+
+    titulo_sucesso.pack(
+        pady=(20, 15)
+    )
+
+    subtitulo = ctk.CTkLabel(
+        sucesso_frame,
+        text=f'"{nome}" foi atualizada no sistema.',
+        font=("Segoe UI", 18),
+        text_color=TEXT_COLOR
+    )
+
+    subtitulo.pack(
+        pady=(0, 30)
+    )
+
+    voltar_menu_btn = ctk.CTkButton(
+        sucesso_frame,
+        text="Voltar ao Menu",
+        width=250,
+        height=55,
+        fg_color=PURPLE,
+        hover_color=PURPLE_HOVER,
+        font=("Segoe UI", 17, "bold"),
+        command=lambda: voltar_menu(app)
+    )
+
+    voltar_menu_btn.pack()
 
 
 # Fun abrir tela de editar tarefa
@@ -347,7 +398,7 @@ def editar_tudo(app, tarefa):
             int(progresso.get())
         )
 
-        abrir_editar_task(app)
+        tela_sucesso_edicao(app, nome.get())
 
 
     btn = ctk.CTkButton(
@@ -393,7 +444,7 @@ def editar_nome(app, tarefa):
             tarefa[5]
         )
 
-        abrir_editar_task(app)
+        tela_sucesso_edicao(app, tarefa[1])
 
 
     btn = ctk.CTkButton(
@@ -439,7 +490,8 @@ def editar_descricao(app, tarefa):
             tarefa[5]
         )
 
-        abrir_editar_task(app)
+        
+        tela_sucesso_edicao(app, tarefa[1])
 
     btn = ctk.CTkButton(
         frame,
@@ -488,7 +540,7 @@ def editar_prioridade(app, tarefa):
             tarefa[5]
         )
 
-        abrir_editar_task(app)
+        tela_sucesso_edicao(app, tarefa[1])
 
     btn = ctk.CTkButton(
         frame,
@@ -537,7 +589,7 @@ def editar_status(app, tarefa):
             tarefa[5]
         )
 
-        abrir_editar_task(app)
+        tela_sucesso_edicao(app, tarefa[1])
 
     btn = ctk.CTkButton(
         frame,
@@ -602,7 +654,9 @@ def editar_progresso(app, tarefa):
             int(progresso.get())
         )
 
-        abrir_editar_task(app)
+        tela_sucesso_edicao(app, tarefa[1])
+
+    
 
     btn = ctk.CTkButton(
         frame,
