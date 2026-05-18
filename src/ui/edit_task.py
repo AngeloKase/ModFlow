@@ -337,20 +337,18 @@ def editar_tudo(app, tarefa):
     progresso.pack(fill="x", pady=20)
 
     def salvar():
-
         editar_tarefa(
-        
+
+            tarefa[0],
             nome.get(),
-            descricao.get(
-                "1.0",
-                "end"
-            ).strip(),
+            descricao.get("1.0", "end").strip(),
             prioridade.get(),
             status.get(),
             int(progresso.get())
         )
 
         abrir_editar_task(app)
+
 
     btn = ctk.CTkButton(
         frame,
@@ -385,9 +383,9 @@ def editar_nome(app, tarefa):
     entrada.pack(fill="x", pady=20)
 
     def salvar():
-
         editar_tarefa(
-            
+
+            tarefa[0],
             entrada.get(),
             tarefa[2],
             tarefa[3],
@@ -396,6 +394,7 @@ def editar_nome(app, tarefa):
         )
 
         abrir_editar_task(app)
+
 
     btn = ctk.CTkButton(
         frame,
@@ -430,14 +429,11 @@ def editar_descricao(app, tarefa):
     entrada.pack(fill="x", pady=20)
 
     def salvar():
-
         editar_tarefa(
-            
+
+            tarefa[0],
             tarefa[1],
-            entrada.get(
-                "1.0",
-                "end"
-            ).strip(),
+            entrada.get("1.0", "end").strip(),
             tarefa[3],
             tarefa[4],
             tarefa[5]
@@ -482,9 +478,9 @@ def editar_prioridade(app, tarefa):
     prioridade.pack(fill="x", pady=20)
 
     def salvar():
-
         editar_tarefa(
-        
+
+            tarefa[0],
             tarefa[1],
             tarefa[2],
             prioridade.get(),
@@ -531,9 +527,9 @@ def editar_status(app, tarefa):
     status.pack(fill="x", pady=20)
 
     def salvar():
-
         editar_tarefa(
-           
+
+            tarefa[0],
             tarefa[1],
             tarefa[2],
             tarefa[3],
@@ -596,9 +592,9 @@ def editar_progresso(app, tarefa):
     )
 
     def salvar():
-
         editar_tarefa(
-            
+
+            tarefa[0],
             tarefa[1],
             tarefa[2],
             tarefa[3],
