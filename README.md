@@ -92,6 +92,6 @@ Futuramente, o sistema será aprimorado com validações obrigatórias no cadast
 
 O objetivo dessa melhoria é aumentar a confiabilidade do sistema, garantir maior integridade dos dados e melhorar a experiência do usuário durante o gerenciamento das tarefas.
 
-## 🔄 Video do Projeto
+## 🎥 Video do Projeto
 
 Segue o link a seguir, https://youtu.be/up1kazfNcKE
