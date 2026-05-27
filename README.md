@@ -91,3 +91,7 @@ As mudanças permitiram que o sistema se aproximasse mais de aplicações reais 
 Futuramente, o sistema será aprimorado com validações obrigatórias no cadastro de tarefas, impedindo que informações importantes sejam deixadas vazias durante a criação de uma nova tarefa.
 
 O objetivo dessa melhoria é aumentar a confiabilidade do sistema, garantir maior integridade dos dados e melhorar a experiência do usuário durante o gerenciamento das tarefas.
+
+## 🔄 Video do Projeto
+
+Segue o link a seguir, https://youtu.be/up1kazfNcKE
